@@ -1,0 +1,17 @@
+
+.image {
+  float: left;
+  width: 6rem;
+  height: 100%;
+}
+.image img{
+  width: 100%;
+}
+
+.list {
+  float: left;
+  color: red;
+}
+.list a {
+  color: red;
+}

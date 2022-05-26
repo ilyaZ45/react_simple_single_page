@@ -11,45 +11,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-ul {
-  display: table;
-    float: left;
-}
-header img{
-  width: 4rem;
-  height: 2rem;
-}
-main img {
-    width: 50%;
-    height: 100%;
-    float: left;
-}
-.app-wrapper {
-  display: grid;
-  grid-template-areas:
-          "header header"
-          "nav main"
-          "footer footer";
-    grid-template-rows: 5rem 1fr 5rem;
-    grid-template-columns: 2fr 10fr;
 
-}
 
-header{
-  grid-area: header;
-  background-color: lightgreen;
-}
-nav{
-   grid-area: nav;
-    background-color: lightcyan;
-}
-
-main{
-    grid-area: main;
-    background-color: yellow;
-
-}
-footer {
-    grid-area: footer;
-    background-color: antiquewhite;
- }

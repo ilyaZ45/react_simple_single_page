@@ -1,0 +1,11 @@
+.post ul {
+    /*float: left;*/
+}
+
+.post li {
+    display: block;
+}
+
+.post li img {
+    width: 2rem;
+}
