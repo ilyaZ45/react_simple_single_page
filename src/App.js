@@ -1,18 +1,22 @@
 import React from "react";
-import './App.css';
+import classes from './App.css';
 import Header from "./components/header/Header";
 import Main from "./components/main/Main";
 import Footer from "./components/footer/Footer";
 import Nav from "./components/nav/Nav";
-const App = () => {
-  return (
-      <div className="app-wrapper">
-        <Header />
-          <Nav />
-        <Main />
-          <Footer />
-      </div>
-  );
+import {BrowserRouter} from "react-router-dom";
+
+const App = (props) => {
+    return (
+        <BrowserRouter>
+            <div className="app-wrapper">
+                <Header/>
+                <Nav/>
+                <Main/>
+                <Footer/>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;

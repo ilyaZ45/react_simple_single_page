@@ -1,19 +1,27 @@
-
 import classes from "./Main.module.css";
-import Post from "./post/Post"
+import Profile from "./profile/Profile";
+import Dialogs from "./dialogs/Dialogs";
+import News from "./news/News";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import React from "react";
 // classes = {
 //     'main': 'Main_main__XP8cg ul',
 // }
 
 const Main = () => {
-    return(
-        <main className={classes.main}>
-            <div>
-                <img src="https://w-dog.ru/wallpapers/1/21/494513120428084/oblaka-gory-derevya-reka-doroga.jpg" alt=""/>
-            </div>
-            <Post message='i changed message' image = 'https://w-dog.ru/wallpapers/2/95/532579308403728/nebo-bavarskie-alpy-gory-oblaka-pejzazh-palmy-pastbishhe.jpg' />
-            <Post message='For every posts' image = 'https://www.sunhome.ru/i/wallpapers/138/belii-zamok.orig.jpg' />
-      </main>
+    return (
+            <main className='main'>
+                <Routes>
+                    <Route path="/" element={<Navigate replace to="/profile"/>}></Route>
+                    <Route path="/dialogs" element={<Dialogs />}></Route>
+                    <Route path="/profile" element={<Profile />}></Route>
+                    <Route path="/news" element={<News />}></Route>
+
+                    {/*<Route path="/news" element={<News />}></Route>*/}
+                </Routes>
+
+            </main>
+
     );
-  }
-  export default Main;
+}
+export default Main;

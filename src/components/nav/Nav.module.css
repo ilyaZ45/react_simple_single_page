@@ -1,5 +1,16 @@
 
-.nav ul {
+.list {
   display: table;
     float: left;
+  /*color: blue;*/
+}
+ul li a{
+  color: blue;
+}
+ul li a:active {
+  color: red;
+}
+
+.active{
+  color: white;
 }

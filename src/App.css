@@ -59,9 +59,11 @@ nav{
 main{
     grid-area: main;
     background-color: yellow;
+    display: grid;
 
 }
 footer {
     grid-area: footer;
     background-color: antiquewhite;
  }
+
