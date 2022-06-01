@@ -8,16 +8,15 @@ import React from "react";
 //     'main': 'Main_main__XP8cg ul',
 // }
 
-const Main = () => {
+const Main = (props) => {
+     debugger;
     return (
             <main className='main'>
                 <Routes>
-                    <Route path="/" element={<Navigate replace to="/profile"/>}></Route>
-                    <Route path="/dialogs" element={<Dialogs />}></Route>
-                    <Route path="/profile" element={<Profile />}></Route>
-                    <Route path="/news" element={<News />}></Route>
-
-                    {/*<Route path="/news" element={<News />}></Route>*/}
+                    <Route path="/" element={<Navigate replace to="/profile"/>}/>
+                    <Route path="/dialogs" element={<Dialogs dialogsData={props.dialogsData} messageData={props.messageData}/>}/>
+                    <Route path="/profile" element={<Profile postsData={props.postsData} />} />
+                    <Route path="/news" element={<News />}/>
                 </Routes>
 
             </main>

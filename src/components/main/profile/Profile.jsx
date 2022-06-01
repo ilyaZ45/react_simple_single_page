@@ -1,22 +1,23 @@
 import classes from "./Profile.module.css";
 import Post from "./post/Post";
+import ProfileInfo from "./profileinfo/ProfileInfo";
+import React from "react";
 
 
 const Profile = (props) => {
+    let postsEl = props.postsData.map(
+        post => <Post key={post.id}  message={post.message} image={post.image} likesCount={post.likesCount} />
+    );
     return (
         <div className={classes.content}>
-            <div className='prof'>
-                <img src="https://w-dog.ru/wallpapers/1/21/494513120428084/oblaka-gory-derevya-reka-doroga.jpg" alt=""/>
-            </div>
+            <ProfileInfo />
             <div className="just">
-                <Post message='I can changed message'
-                      image='https://w-dog.ru/wallpapers/2/95/532579308403728/nebo-bavarskie-alpy-gory-oblaka-pejzazh-palmy-pastbishhe.jpg'/>
-                <Post message='For every posts' image='https://www.sunhome.ru/i/wallpapers/138/belii-zamok.orig.jpg'/>
+                <div><h3>My Posts</h3></div>
+                {postsEl}
                 <div>
                     ava + description
                 </div>
             </div>
-            {/*<Post message='I can changed message'/>*/}
         </div>
     );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./Nav.module.css";
 import "./Nav.module.css";
 import {NavLink} from "react-router-dom";
-import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+
 
 // classes = {
 //     'nav': 'Nav_nav__jdLU9 ul',
