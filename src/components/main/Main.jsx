@@ -9,13 +9,16 @@ import React from "react";
 // }
 
 const Main = (props) => {
-     debugger;
+     // debugger;
     return (
             <main className='main'>
                 <Routes>
                     <Route path="/" element={<Navigate replace to="/profile"/>}/>
-                    <Route path="/dialogs" element={<Dialogs dialogsData={props.dialogsData} messageData={props.messageData}/>}/>
-                    <Route path="/profile" element={<Profile postsData={props.postsData} />} />
+                    <Route path="/dialogs" element={<Dialogs
+                        state={props.state.dialogsPage} />}/>
+                    <Route path="/profile" element={<Profile
+                        state={props.state.profilePage}
+                        addPost={props.addPost}/>} />
                     <Route path="/news" element={<News />}/>
                 </Routes>
 

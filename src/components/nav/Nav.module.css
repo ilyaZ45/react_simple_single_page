@@ -1,16 +1,43 @@
 
 .list {
-  display: table;
+    display: table;
     float: left;
-  /*color: blue;*/
-}
-ul li a{
-  color: blue;
-}
-ul li a:active {
-  color: red;
+    /*color: blue;*/
 }
 
-.active{
-  color: white;
+ul li a {
+    color: blue;
+}
+
+ul li a:active {
+    color: red;
+}
+
+.active {
+    color: white;
+}
+
+.block_friends {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.name h3 {
+    text-align: center;
+}
+
+.block_friends .round {
+    background-color: yellow;
+    border: 1px solid #ccc;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+}
+
+.block_round {
+    text-align: -webkit-center;
+}
+
+.block_friends h5 {
+    text-align: center;
 }

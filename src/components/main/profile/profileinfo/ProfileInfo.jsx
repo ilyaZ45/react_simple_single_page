@@ -3,20 +3,27 @@ import React from "react";
 
 
 const ProfileInfo = (props) => {
+    let newPostsElement = React.createRef();
+    let addPost = () =>{
+        let text = newPostsElement.current.value;
+        props.addPost(text);
+    }
+
+
     return (
         <div className={classes.content}>
-        <div className={classes.prof}>
-            <img src="https://w-dog.ru/wallpapers/1/21/494513120428084/oblaka-gory-derevya-reka-doroga.jpg" alt=""/>
-        </div>
+            <div className={classes.prof}>
+                <img src="https://w-dog.ru/wallpapers/1/21/494513120428084/oblaka-gory-derevya-reka-doroga.jpg" alt=""/>
+            </div>
 
-        <div>
             <div>
-                <textarea name="" id="" cols="15" rows="10"></textarea>
+                <div>
+                    <textarea ref={newPostsElement}></textarea>
+                </div>
+                <div>
+                    <button onClick={addPost}>Add post</button>
+                </div>
             </div>
-            <div>
-                <button>Add post</button>
-            </div>
-        </div>
         </div>
     );
 }

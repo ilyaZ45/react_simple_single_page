@@ -7,13 +7,13 @@ import React from "react";
 
 const Dialogs = (props) => {
 
-    let dialogsEl = props.dialogsData.map(
+    let dialogsEl = props.state.dialogsData.map(
         d => <Dialog key={d.id}  name={d.name}  />
     );
-    let messageEl = props.messageData.map(
+    let messageEl = props.state.messageData.map(
         mes => <Message key={mes.id} message={mes.message} />
     );
-    debugger;
+    // debugger;
     return (
         <div className={classes.content}>
             <div className={classes.dialogs} >

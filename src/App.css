@@ -54,6 +54,8 @@ header{
 nav{
    grid-area: nav;
     background-color: lightcyan;
+    display: grid;
+    grid-template-rows: 3fr 3fr;
 }
 
 main{
