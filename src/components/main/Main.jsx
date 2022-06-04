@@ -4,12 +4,13 @@ import Dialogs from "./dialogs/Dialogs";
 import News from "./news/News";
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import React from "react";
+
 // classes = {
 //     'main': 'Main_main__XP8cg ul',
 // }
 
 const Main = (props) => {
-     // debugger;
+    // debugger;
     return (
             <main className='main'>
                 <Routes>
@@ -18,7 +19,9 @@ const Main = (props) => {
                         state={props.state.dialogsPage} />}/>
                     <Route path="/profile" element={<Profile
                         state={props.state.profilePage}
-                        addPost={props.addPost}/>} />
+                        addPost={props.addPost}
+                        updateNewPost={props.updateNewPost}
+                    />} />
                     <Route path="/news" element={<News />}/>
                 </Routes>
 

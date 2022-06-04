@@ -5,11 +5,12 @@ import React from "react";
 const ProfileInfo = (props) => {
     let newPostsElement = React.createRef();
     let addPost = () =>{
-        let text = newPostsElement.current.value;
-        props.addPost(text);
+        props.addPost();
     }
-
-
+    let onPostChange = () => {
+        let text = newPostsElement.current.value;
+        props.updateNewPost(text);
+    }
     return (
         <div className={classes.content}>
             <div className={classes.prof}>
@@ -18,7 +19,10 @@ const ProfileInfo = (props) => {
 
             <div>
                 <div>
-                    <textarea ref={newPostsElement}></textarea>
+                    <textarea onChange={onPostChange}
+                              ref={newPostsElement}
+                              value={props.newPostText}
+                    ></textarea>
                 </div>
                 <div>
                     <button onClick={addPost}>Add post</button>

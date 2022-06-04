@@ -8,15 +8,14 @@ import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import Dialogs from "./components/main/dialogs/Dialogs";
 
 const App = (props) => {
+    // debugger;
     return (
-        <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
                 <Nav/>
-                <Main state={props.state} addPost={props.addPost}/>
+                <Main state={props.state} addPost={props.addPost} updateNewPost={props.updateNewPost}/>
                 <Footer/>
             </div>
-        </BrowserRouter>
     );
 }
 
