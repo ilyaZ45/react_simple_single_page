@@ -19,9 +19,10 @@ const ProfileInfo = (props) => {
 
             <div>
                 <div>
-                    <textarea onChange={onPostChange}
+                    <textarea
                               ref={newPostsElement}
                               value={props.newPostText}
+                              onChange={onPostChange}
                     ></textarea>
                 </div>
                 <div>

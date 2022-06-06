@@ -59,7 +59,7 @@ export const addPost = () => {
 
 export const updateNewPost = (newText) => {
     state.profilePage.newPostText = newText;
-    rerenderEntireTree(state);
+    // rerenderEntireTree(state);
 }
 export const subscribe = (observer) => {
     rerenderEntireTree = observer;  //патерн
