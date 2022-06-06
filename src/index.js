@@ -2,9 +2,10 @@ import React from 'react';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/state';
-import ReactDOM from "react-dom/client";import App from "./App";
+import ReactDOM from "react-dom/client";
+import App from "./App";
 import {BrowserRouter} from "react-router-dom";
-import { createRoot } from 'react-dom/client';
+import {createRoot} from 'react-dom/client';
 
 // let container = null;
 // let rerenderEntireTree = () => {
@@ -28,9 +29,9 @@ let rerenderEntireTree = (state) => {
     root.render(
         <BrowserRouter>
             <React.StrictMode>
-            <App state={state}
-                 addPost={store.addPost.bind(store)}  // bind-кому принадлежит метод
-                 updateNewPost={store.updateNewPost.bind(store)} />
+                <App state={state}
+                     dispatch={store.dispatch.bind(store)}  // bind-кому принадлежит метод
+                />
             </React.StrictMode>
         </BrowserRouter>
     );

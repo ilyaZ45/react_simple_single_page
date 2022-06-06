@@ -13,7 +13,7 @@ const App = (props) => {
             <div className="app-wrapper">
                 <Header/>
                 <Nav/>
-                <Main state={props.state} addPost={props.addPost} updateNewPost={props.updateNewPost}/>
+                <Main state={props.state} dispatch={props.dispatch} />
                 <Footer/>
             </div>
     );

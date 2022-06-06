@@ -19,8 +19,7 @@ const Main = (props) => {
                         state={props.state.dialogsPage} />}/>
                     <Route path="/profile" element={<Profile
                         state={props.state.profilePage}
-                        addPost={props.addPost}
-                        updateNewPost={props.updateNewPost}
+                        dispatch={props.dispatch}
                     />} />
                     <Route path="/news" element={<News />}/>
                 </Routes>

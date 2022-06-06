@@ -5,11 +5,12 @@ import React from "react";
 const ProfileInfo = (props) => {
     let newPostsElement = React.createRef();
     let addPost = () =>{
-        props.addPost();
+        props.dispatch({type: 'ADD-POST'});
     }
     let onPostChange = () => {  //отвеч за обновление страницы с постами и добавлении
         let text = newPostsElement.current.value;
-        props.updateNewPost(text);
+        let newVar = {type: 'UDDATE-NEW-POST', newText: text};
+        props.dispatch(newVar);
     }
     return (
         <div className={classes.content}>
