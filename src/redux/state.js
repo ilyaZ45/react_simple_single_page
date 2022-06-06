@@ -1,8 +1,5 @@
-let rerenderEntireTree = () => {
-    console.log('Hi');
-}
-
-let state = {
+let store = {
+    _state: {
     profilePage: {
         postsData: [
             {
@@ -41,28 +38,35 @@ let state = {
         ],
     },
 
-}
-
-window.state = state;
-
-export const addPost = () => {
+},
+    getState() {
+        return this._state;
+    },
+    rerenderEntireTree() {
+    console.log('Hi');
+    },
+    addPost() {
     debugger;
     let newPost = {
         id: 5,
-        message: state.profilePage.newPostText,
+        message: this._state.profilePage.newPostText,
         likesCount: 0,
     }
-    state.profilePage.postsData.push(newPost);
-    state.profilePage.newPostText='';
-    rerenderEntireTree(state);
+    this._state.profilePage.postsData.push(newPost);
+    this._state.profilePage.newPostText='';
+    this.rerenderEntireTree(this._state);
+    },
+    updateNewPost(newText)  {
+    this._state.profilePage.newPostText = newText;
+    // rerenderEntireTree(state);  //не работает из-за неё
+},
+    subscribe(observer) {
+    this.rerenderEntireTree = observer;  //патерн
+},
+
 }
 
-export const updateNewPost = (newText) => {
-    state.profilePage.newPostText = newText;
-    // rerenderEntireTree(state);
-}
-export const subscribe = (observer) => {
-    rerenderEntireTree = observer;  //патерн
-}
-export default state;
+export default store;
+window.store = store;  // для обращения глобально
+
 

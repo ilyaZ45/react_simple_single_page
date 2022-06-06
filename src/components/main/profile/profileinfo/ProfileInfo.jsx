@@ -7,7 +7,7 @@ const ProfileInfo = (props) => {
     let addPost = () =>{
         props.addPost();
     }
-    let onPostChange = () => {
+    let onPostChange = () => {  //отвеч за обновление страницы с постами и добавлении
         let text = newPostsElement.current.value;
         props.updateNewPost(text);
     }
