@@ -1,5 +1,4 @@
 import classes from "./Dialogs.module.css";
-import {NavLink} from "react-router-dom";
 import Dialog from "./dialog/Dialog";
 import Message from "./message/Message";
 import React from "react";
@@ -18,13 +17,15 @@ const Dialogs = (props) => {
 
     let newMessageElement = React.createRef();
     let addMessage = () =>{
-        debugger;
+        // debugger;
         props.dispatch(addMessageActionCreator());
     }
     let onPostChange = () => {  //отвеч за обновление страницы с постами и добавлении
         let body = newMessageElement.current.value;
         let action = messageUpdateActionCreator(body);
-        props.dispatch(action);
+        document.querySelector('button').addEventListener("click", function () {
+            props.dispatch(action);
+        })
     }
     // debugger;
     return (

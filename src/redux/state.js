@@ -1,7 +1,10 @@
-const ADD_POST = 'ADD-POST';
-const UDDATE_NEW_POST = 'UDDATE-NEW-POST';
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+
 const ADD_MESSAGE = 'ADD-MESSAGE';
 const UPDATE_NEW_MESSAGE = 'UPDATE-NEW-MESSAGE';
+const ADD_POST = 'ADD-POST';
+const UDDATE_NEW_POST = 'UDDATE-NEW-POST';
 let store = {
     _state: {
         profilePage: {
@@ -51,34 +54,9 @@ let store = {
         console.log('Hi');
     },
     dispatch(action) { // у объекта action есть метод type
-        if (action.type === ADD_POST) {
-            // debugger;
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newPostText,
-                image: "https://w-dog.ru/wallpapers/2/95/532579308403728/nebo-bavarskie-alpy-gory-oblaka-pejzazh-palmy-pastbishhe.jpg",
-                likesCount: 0,
-            }
-            this._state.profilePage.postsData.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this.rerenderEntireTree(this._state);
-        } else if (action.type === UDDATE_NEW_POST) {
-            this._state.profilePage.newPostText = action.newText;
-            // this.rerenderEntireTree(this._state);  //не работает из-за неё
-        } else if (action.type === ADD_MESSAGE) {
-            debugger;
-            let newMessage = {
-                id: 7,
-                message: this._state.dialogsPage.newMessageBody,
-            }
-            this._state.dialogsPage.messageData.push(newMessage);
-            this._state.dialogsPage.newMessageBody = '';
-            this.rerenderEntireTree(this._state);
-
-        } else if (action.type === UPDATE_NEW_MESSAGE) {
-            this._state.dialogsPage.newMessageBody = action.body;
-            // this.rerenderEntireTree(this._state);
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this.rerenderEntireTree(this._state);
     },
 
     subscribe(observer) {
