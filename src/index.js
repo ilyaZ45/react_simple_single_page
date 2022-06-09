@@ -8,7 +8,7 @@ import {BrowserRouter} from "react-router-dom";
 import {createRoot} from 'react-dom/client';
 
 // let container = null;
-// let rerenderEntireTree = () => {
+// let rerenderEntireTree = (state) => {
 //     document.addEventListener('DOMContentLoaded', function (event) {
 //         if (!container) {
 //             container = document.getElementById('root');
@@ -16,7 +16,9 @@ import {createRoot} from 'react-dom/client';
 //             root.render(
 //                 <BrowserRouter>
 //                     <React.StrictMode>
-//                     <App state={state} addPost={addPost} updateNewPost={updateNewPost}/>
+//                     <App state={state}
+//                      dispatch={store.dispatch.bind(store)}  // bind-кому принадлежит метод
+//                 />
 //                     </React.StrictMode>
 //                 </BrowserRouter>
 //             );
@@ -31,6 +33,7 @@ let rerenderEntireTree = (state) => {
             <React.StrictMode>
                 <App state={state}
                      dispatch={store.dispatch.bind(store)}  // bind-кому принадлежит метод
+                     store={store}
                 />
             </React.StrictMode>
         </BrowserRouter>

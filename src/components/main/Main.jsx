@@ -16,7 +16,9 @@ const Main = (props) => {
                 <Routes>
                     <Route path="/" element={<Navigate replace to="/profile"/>}/>
                     <Route path="/dialogs" element={<Dialogs
-                        state={props.state.dialogsPage} />}/>
+                        store={props.store}
+                        dispatch={props.dispatch}/>}
+                    />
                     <Route path="/profile" element={<Profile
                         state={props.state.profilePage}
                         dispatch={props.dispatch}

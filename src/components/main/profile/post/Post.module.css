@@ -9,3 +9,7 @@
 .post li img {
     width: 2rem;
 }
+
+.post li {
+    margin-top: 0.5rem;
+}

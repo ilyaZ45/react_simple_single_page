@@ -1,16 +1,18 @@
 import classes from "./ProfileInfo.module.css";
 import React from "react";
+import {addPostActionCreator, postUpdateActionCreator} from "../../../../redux/state";
+
 
 
 const ProfileInfo = (props) => {
     let newPostsElement = React.createRef();
     let addPost = () =>{
-        props.dispatch({type: 'ADD-POST'});
+        props.dispatch(addPostActionCreator());
     }
     let onPostChange = () => {  //отвеч за обновление страницы с постами и добавлении
         let text = newPostsElement.current.value;
-        let newVar = {type: 'UDDATE-NEW-POST', newText: text};
-        props.dispatch(newVar);
+        let action = postUpdateActionCreator(text);
+        props.dispatch(action);
     }
     return (
         <div className={classes.content}>

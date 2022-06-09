@@ -1,3 +1,7 @@
+const ADD_POST = 'ADD-POST';
+const UDDATE_NEW_POST = 'UDDATE-NEW-POST';
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPDATE_NEW_MESSAGE = 'UPDATE-NEW-MESSAGE';
 let store = {
     _state: {
         profilePage: {
@@ -36,6 +40,7 @@ let store = {
                 {id: 6, message: "Know"},
 
             ],
+            newMessageBody: "hi",
         },
 
     },
@@ -46,19 +51,33 @@ let store = {
         console.log('Hi');
     },
     dispatch(action) { // у объекта action есть метод type
-        if (action.type === 'ADD-POST') {
+        if (action.type === ADD_POST) {
             // debugger;
             let newPost = {
                 id: 5,
                 message: this._state.profilePage.newPostText,
+                image: "https://w-dog.ru/wallpapers/2/95/532579308403728/nebo-bavarskie-alpy-gory-oblaka-pejzazh-palmy-pastbishhe.jpg",
                 likesCount: 0,
             }
             this._state.profilePage.postsData.push(newPost);
             this._state.profilePage.newPostText = '';
             this.rerenderEntireTree(this._state);
-        } else if (action.type === 'UDDATE-NEW-POST') {
+        } else if (action.type === UDDATE_NEW_POST) {
             this._state.profilePage.newPostText = action.newText;
-            // rerenderEntireTree(state);  //не работает из-за неё
+            // this.rerenderEntireTree(this._state);  //не работает из-за неё
+        } else if (action.type === ADD_MESSAGE) {
+            debugger;
+            let newMessage = {
+                id: 7,
+                message: this._state.dialogsPage.newMessageBody,
+            }
+            this._state.dialogsPage.messageData.push(newMessage);
+            this._state.dialogsPage.newMessageBody = '';
+            this.rerenderEntireTree(this._state);
+
+        } else if (action.type === UPDATE_NEW_MESSAGE) {
+            this._state.dialogsPage.newMessageBody = action.body;
+            // this.rerenderEntireTree(this._state);
         }
     },
 
@@ -68,6 +87,26 @@ let store = {
 
 }
 
+export const addPostActionCreator = () => {
+    return {
+        type: ADD_POST,
+    }
+}
+export const postUpdateActionCreator = (text) => {
+    return {
+        type: UDDATE_NEW_POST, newText: text,
+    }
+}
+export const addMessageActionCreator = () => {
+    return {
+        type: ADD_MESSAGE,
+    }
+}
+export const messageUpdateActionCreator = (body) => {
+    return {
+        type: UPDATE_NEW_MESSAGE, body: body,
+    }
+}
 export default store;
 window.store = store;  // для обращения глобально
 
