@@ -1,12 +1,12 @@
 import classes from "./ProfileInfo.module.css";
 import React from "react";
-import {addPostActionCreator, postUpdateActionCreator} from "../../../../redux/store";
-import Post from "../post/Post";
+import Post from "./post/Post";
 
 
 const ProfileInfo = (props) => {
     // debugger;
-    let postsEl = props.profilePage.postsData.map(
+
+    let postsEl = props.postsData.map(
         post => <Post key={post.id}  message={post.message} image={post.image} likesCount={post.likesCount} />
     );
     let newPostsElement = React.useRef();
@@ -24,9 +24,7 @@ const ProfileInfo = (props) => {
         <div className={classes.content}>
             <div className={classes.prof}>
                 <img src="https://w-dog.ru/wallpapers/1/21/494513120428084/oblaka-gory-derevya-reka-doroga.jpg" alt=""/>
-            </div>
-
-            <div >
+                <div >
                 <div>
                     <textarea
                         ref={newPostsElement}
@@ -38,6 +36,9 @@ const ProfileInfo = (props) => {
                     <button  onClick={addPost}>Add post</button>
                 </div>
             </div>
+            </div>
+
+
              <div className="just">
                 <div><h3>My Posts</h3></div>
                 {postsEl}

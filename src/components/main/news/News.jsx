@@ -1,6 +1,6 @@
 
 import React from "react";
-import Post from "../profile/post/Post";
+import Post from "../profile/profileinfo/post/Post";
 import classes from "./News.module.css";
 import {NavLink} from "react-router-dom";
 
