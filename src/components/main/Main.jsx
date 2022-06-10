@@ -20,7 +20,7 @@ const Main = (props) => {
                         dispatch={props.dispatch}/>}
                     />
                     <Route path="/profile" element={<Profile
-                        state={props.state.profilePage}
+                        profilePage={props.state.profilePage}
                         dispatch={props.dispatch}
                     />} />
                     <Route path="/news" element={<News />}/>

@@ -1,11 +1,14 @@
 import React from 'react';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import store from './redux/state';
+import store from './redux/store';
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import {BrowserRouter} from "react-router-dom";
 import {createRoot} from 'react-dom/client';
+import ReactDom from "react-dom/profiling";
+
+
 
 // let container = null;
 // let rerenderEntireTree = (state) => {
@@ -26,8 +29,7 @@ import {createRoot} from 'react-dom/client';
 //     })
 // };
 let rerenderEntireTree = (state) => {
-    const container = document.getElementById('root');
-    const root = createRoot(container);
+    const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(
         <BrowserRouter>
             <React.StrictMode>
@@ -40,5 +42,8 @@ let rerenderEntireTree = (state) => {
     );
 }
 rerenderEntireTree(store.getState());
-store.subscribe(rerenderEntireTree);
+store.subscribe(() => {
+    let state = store.getState();
+    rerenderEntireTree(state);
+});
 reportWebVitals();
