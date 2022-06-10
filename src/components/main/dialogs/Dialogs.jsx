@@ -7,24 +7,23 @@ import {addMessageActionCreator, messageUpdateActionCreator} from "../../../redu
 
 
 const Dialogs = (props) => {
-    let state = props.store.getState().dialogsPage;
-    let dialogsEl = state.dialogsData.map(
+    debugger;
+
+    let dialogsEl = props.dialogsData.map(
         d => <Dialog key={d.id}  name={d.name}  />
     );
-    let messageEl = state.messageData.map(
+    let messageEl = props.messageData.map(
         mes => <Message key={mes.id} message={mes.message} />
     );
 
     let newMessageElement = React.createRef();
     let addMessage = () =>{
-        // debugger;
-        props.dispatch(addMessageActionCreator());
+        props.addMessage();
     }
     let onPostChange = () => {  //отвеч за обновление страницы с постами и добавлении
         let body = newMessageElement.current.value;
-        let action = messageUpdateActionCreator(body);
         document.querySelector('button').addEventListener("click", function () {
-            props.dispatch(action);
+            props.updateNewMessage(body);
         })
     }
     // debugger;

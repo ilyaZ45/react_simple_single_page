@@ -4,6 +4,7 @@ import Dialogs from "./dialogs/Dialogs";
 import News from "./news/News";
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import React from "react";
+import DialogsContainer from "./dialogs/DialogsContainer";
 
 // classes = {
 //     'main': 'Main_main__XP8cg ul',
@@ -15,13 +16,12 @@ const Main = (props) => {
             <main className='main'>
                 <Routes>
                     <Route path="/" element={<Navigate replace to="/profile"/>}/>
-                    <Route path="/dialogs" element={<Dialogs
+                    <Route path="/dialogs" element={<DialogsContainer
                         store={props.store}
-                        dispatch={props.dispatch}/>}
+                    />}
                     />
                     <Route path="/profile" element={<Profile
-                        state={props.state.profilePage}
-                        dispatch={props.dispatch}
+                        store={props.store}
                     />} />
                     <Route path="/news" element={<News />}/>
                 </Routes>

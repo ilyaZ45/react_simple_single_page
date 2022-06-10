@@ -5,7 +5,6 @@ import Post from "./post/Post";
 
 const ProfileInfo = (props) => {
     // debugger;
-
     let postsEl = props.postsData.map(
         post => <Post key={post.id}  message={post.message} image={post.image} likesCount={post.likesCount} />
     );

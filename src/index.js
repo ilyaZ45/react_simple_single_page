@@ -33,7 +33,7 @@ let rerenderEntireTree = (state) => {
     root.render(
         <BrowserRouter>
             <React.StrictMode>
-                <App state={state}
+                <App
                      dispatch={store.dispatch.bind(store)}  // bind-кому принадлежит метод
                      store={store}
                 />
