@@ -12,13 +12,13 @@ const Dialogs = (props) => {
     let messageEl = props.dialogsPage.messageData.map(
         mes => <Message key={mes.id} message={mes.message} />
     );
+    let newMessageBody = props.dialogsPage.newMessageBody;
 
-    let newMessageElement = React.createRef();
     let addMessage = () =>{
         props.addMessage();
     }
-    let onPostChange = () => {  //отвеч за обновление страницы с постами и добавлении
-        let body = newMessageElement.current.value;
+    let onPostChange = (e) => {  //отвеч за обновление страницы с постами и добавлении
+        let body = e.target.value;
         // document.querySelector('button').addEventListener("click", function () {
             props.updateNewMessage(body);
         // })
@@ -35,9 +35,9 @@ const Dialogs = (props) => {
             <div>
                 <div>
                     <textarea
-                              ref={newMessageElement}
-                              value={props.newMessageBody}
+                              value={newMessageBody}
                               onChange={onPostChange}
+                              placeholder="input your text"
                     ></textarea>
                 </div>
                 <div>

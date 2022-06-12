@@ -26,16 +26,16 @@ let mapStateToProps = (state) => {
     // debugger;
     return {
     dialogsPage: state.dialogsPage,
-    newMessageBody: state.dialogsPage.newMessageBody
+    // newMessageBody: state.dialogsPage.newMessageBody
 }
 }
 let mapDispatchToProps = (dispatch) => {
     return {
-        updateNewMessage: (body) => {
-            dispatch(messageUpdateActionCreator(body));
-        },
         addMessage: () => {
             dispatch(addMessageActionCreator());
+        },
+        updateNewMessage: (body) => {
+            dispatch(messageUpdateActionCreator(body));
         },
     }
 }
