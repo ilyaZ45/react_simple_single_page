@@ -4,6 +4,7 @@ import News from "./news/News";
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import React from "react";
 import DialogsContainer from "./dialogs/DialogsContainer";
+import UsersContainer from "./users/UsersContainer";
 
 const Main = (props) => {
     // debugger;
@@ -15,6 +16,8 @@ const Main = (props) => {
                     />}
                     />
                     <Route path="/profile" element={<Profile
+                    />}/>
+                    <Route path="/users" element={<UsersContainer
                     />}/>
                     <Route path="/news" element={<News/>}/>
                 </Routes>
