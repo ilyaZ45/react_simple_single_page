@@ -5,9 +5,7 @@ import ProfileInfoContainer from "./profileinfo/ProfileInfoContainer";
 const Profile = (props) => {
     // debugger;
     return (
-        <ProfileInfoContainer
-            store={props.store}
-        />
+        <ProfileInfoContainer />
     );
 }
 

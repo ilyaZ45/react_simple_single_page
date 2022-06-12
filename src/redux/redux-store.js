@@ -1,6 +1,6 @@
-const {combineReducers, createStore} = require("redux");
-const profileReducer = require("./profile-reducer");
-const dialogsReducer = require("./dialogs-reducer");
+import {combineReducers, createStore} from "redux";
+import  profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
 
 let reducers = combineReducers({
     profilePage: profileReducer,
@@ -8,5 +8,7 @@ let reducers = combineReducers({
 });
 
 let store = createStore(reducers);
+
+window.store = store;
 
 export default store;

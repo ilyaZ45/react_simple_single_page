@@ -8,15 +8,15 @@ const ProfileInfo = (props) => {
     let postsEl = props.postsData.map(
         post => <Post key={post.id}  message={post.message} image={post.image} likesCount={post.likesCount} />
     );
-    let newPostsElement = React.useRef();
+    let newPostsElement = React.createRef();
     let addPost = () => {
         props.addPost();
     }
     let onPostChange = () => {  //отвеч за обновление страницы с постами и добавлении
         let text = newPostsElement.current.value;
-        document.querySelector('button').addEventListener("click", function () {
+        // document.querySelector('button').addEventListener("click", function () {
             props.updateNewPost(text);
-        })
+        // })
     }
 
     return (

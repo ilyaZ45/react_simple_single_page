@@ -2,17 +2,14 @@ import classes from "./Dialogs.module.css";
 import Dialog from "./dialog/Dialog";
 import Message from "./message/Message";
 import React from "react";
-import {addMessageActionCreator, messageUpdateActionCreator} from "../../../redux/store";
-
-
 
 const Dialogs = (props) => {
-    debugger;
+    // debugger;
 
-    let dialogsEl = props.dialogsData.map(
+    let dialogsEl = props.dialogsPage.dialogsData.map(
         d => <Dialog key={d.id}  name={d.name}  />
     );
-    let messageEl = props.messageData.map(
+    let messageEl = props.dialogsPage.messageData.map(
         mes => <Message key={mes.id} message={mes.message} />
     );
 
@@ -22,9 +19,9 @@ const Dialogs = (props) => {
     }
     let onPostChange = () => {  //отвеч за обновление страницы с постами и добавлении
         let body = newMessageElement.current.value;
-        document.querySelector('button').addEventListener("click", function () {
+        // document.querySelector('button').addEventListener("click", function () {
             props.updateNewMessage(body);
-        })
+        // })
     }
     // debugger;
     return (
