@@ -21,7 +21,6 @@ let initialState = {
 }
 
 const profileReducer = (state = initialState, action) => {
-    let stateCopy = {...state};
     switch (action.type) {
         case ADD_POST:
             // debugger;
@@ -31,16 +30,19 @@ const profileReducer = (state = initialState, action) => {
                 image: "https://w-dog.ru/wallpapers/2/95/532579308403728/nebo-bavarskie-alpy-gory-oblaka-pejzazh-palmy-pastbishhe.jpg",
                 likesCount: 0,
             }
-            stateCopy.postsData = [...state.postsData];
-            stateCopy.postsData.push(newPost);
-            stateCopy.newPostText = '';
-            return stateCopy;
+            return {
+                ...state,
+                postsData: [...state.postsData, newPost],
+                newPostText: '',
+            }
         case UDDATE_NEW_POST: {
-            stateCopy.newPostText = action.newText;
-            return stateCopy;
+            return {
+                ...state,
+                newPostText: action.newText,
+            }
         }
         default:
-            return stateCopy;
+            return state;
     }
 }
 
