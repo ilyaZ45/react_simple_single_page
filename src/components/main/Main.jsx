@@ -1,10 +1,11 @@
 
 import Profile from "./profile/Profile";
 import News from "./news/News";
-import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import React from "react";
 import DialogsContainer from "./dialogs/DialogsContainer";
 import UsersContainer from "./users/UsersContainer";
+
 
 const Main = (props) => {
     // debugger;
