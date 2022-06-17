@@ -4,14 +4,14 @@ const SET_USERS = 'SET-USERS';
 
 let initialState = {
     users: [
-        {
-            id: 1,
-            photoUrl: 'https://avatars.mds.yandex.net/i?id=09e9c64ec63ae8045232ebc97b23226b-5163423-images-thumbs&n=13',
-            followed: true,
-            fullName: "Dmitry",
-            status: "I am a Boss",
-            location: {country: 'Belarus', city: 'Minsk'}
-        },
+        // {
+        //     id: 1,
+        //     photoUrl: 'https://avatars.mds.yandex.net/i?id=09e9c64ec63ae8045232ebc97b23226b-5163423-images-thumbs&n=13',
+        //     followed: true,
+        //     fullName: "Dmitry",
+        //     status: "I am a Boss",
+        //     location: {country: 'Belarus', city: 'Minsk'}
+        // },
         // {
         //     id: 2,
         //        photoUrl: '',
