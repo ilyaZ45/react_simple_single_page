@@ -4,9 +4,8 @@ import Post from "./post/Post";
 
 
 const ProfileInfo = (props) => {
-    // debugger;
     let postsEl = props.postsData.map(
-        post => <Post key={post.id}  message={post.message} image={post.image} likesCount={post.likesCount} />
+        post => <Post key={post.id} message={post.message} image={post.image} likesCount={post.likesCount}/>
     );
     let newPostsElement = React.createRef();
     let addPost = () => {
@@ -14,34 +13,40 @@ const ProfileInfo = (props) => {
     }
     let onPostChange = () => {  //отвеч за обновление страницы с постами и добавлении
         let text = newPostsElement.current.value;
-        // document.querySelector('button').addEventListener("click", function () {
-            props.updateNewPost(text);
+        props.updateNewPost(text);
         // })
     }
-
+    // debugger;
+    if (!props.profile) {
+        return <h1> Wait </h1>
+    }
+    // debugger;
     return (
         <div className={classes.content}>
             <div className={classes.prof}>
-                <img src="https://w-dog.ru/wallpapers/1/21/494513120428084/oblaka-gory-derevya-reka-doroga.jpg" alt=""/>
-                <div >
+                <div>
+                    <img src="https://w-dog.ru/wallpapers/1/21/494513120428084/oblaka-gory-derevya-reka-doroga.jpg" alt=""/>
+                </div>
                 <div>
                     <textarea
                         ref={newPostsElement}
                         value={props.newPostText}
                         onChange={onPostChange}
                     />
-                </div>
-                <div>
-                    <button  onClick={addPost}>Add post</button>
-                </div>
-            </div>
+                    </div>
+                    <div>
+                        <button onClick={addPost}>Add post</button>
+                    </div>
             </div>
 
 
-             <div className="just">
+            <div className="just">
                 <div><h3>My Posts</h3></div>
                 {postsEl}
                 <div>
+                    <img src={props.profile.photos.large}/>
+                    <h4>{props.profile.fullName}</h4>
+                    <h4>{props.profile.aboutMe}</h4>
                     ava + description
                 </div>
             </div>

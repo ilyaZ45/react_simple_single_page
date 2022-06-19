@@ -1,14 +1,16 @@
 
 import Profile from "./profile/Profile";
 import News from "./news/News";
-import {Navigate, Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes, useParams} from "react-router-dom";
 import React from "react";
 import DialogsContainer from "./dialogs/DialogsContainer";
 import UsersContainer from "./users/UsersContainer";
+import ProfileContainer from "./profile/ProfileContainer";
 
 
 const Main = (props) => {
     // debugger;
+    const { id } = useParams();
     return (
             <main className='main'>
                 <Routes>
@@ -16,8 +18,9 @@ const Main = (props) => {
                     <Route path="/dialogs" element={<DialogsContainer
                     />}
                     />
-                    <Route path="/profile" element={<Profile
+                    <Route path="/profile" element={<ProfileContainer
                     />}/>
+                   <Route path="/profile/:id" element={<ProfileContainer/>}/>
                     <Route path="/users" element={<UsersContainer
                     />}/>
                     <Route path="/news" element={<News/>}/>

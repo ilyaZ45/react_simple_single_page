@@ -1,5 +1,6 @@
 const ADD_POST = 'ADD-POST';
 const UDDATE_NEW_POST = 'UDDATE-NEW-POST';
+const SET_USER_PROFILE = 'SET-USER-PROFILE';
 
 let initialState = {
     postsData: [
@@ -18,6 +19,8 @@ let initialState = {
 
     ],
     newPostText: 'Good Morning',
+    profile: null,  //опред изнач состояние профайла,
+
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -41,6 +44,12 @@ const profileReducer = (state = initialState, action) => {
                 newPostText: action.newText,
             }
         }
+        case SET_USER_PROFILE: {   //пишем саму логику
+            return {
+                ...state,
+                profile: action.profile,
+            }
+        }
         default:
             return state;
     }
@@ -56,4 +65,10 @@ export const postUpdateActionCreator = (text) => {
         type: UDDATE_NEW_POST, newText: text,
     }
 }
+export const setUserProfile = (profile) => {
+    return {
+        type: SET_USER_PROFILE, profile
+    }
+}
+
 export default profileReducer;
