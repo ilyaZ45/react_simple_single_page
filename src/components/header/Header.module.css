@@ -15,3 +15,9 @@
 .list a {
   color: red;
 }
+.loginBlock{
+  float: right;
+}
+.loginBlock a{
+  color: blue;
+}
