@@ -3,6 +3,7 @@ textarea{
 }
 .content{
     display: grid;
+    background-color: lightblue;
 }
 .content img{
     width: 20rem;

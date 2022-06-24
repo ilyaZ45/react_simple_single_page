@@ -1,7 +1,16 @@
 .content{
+    /*margin-top: 1rem;*/
+    /*display: grid;*/
+    /*grid-template-columns: 2fr 10fr;*/
+    background-color: antiquewhite;
+}
+.wrap {
     margin-top: 1rem;
     display: grid;
     grid-template-columns: 2fr 10fr;
+}
+.block2{
+    margin-top: 1rem;
 }
 .dialogs{
 

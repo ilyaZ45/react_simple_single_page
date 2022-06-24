@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 3fr 2fr 2fr;
     grid-template-rows: 5fr;
+    background-color: #cccccc;
 }
 .content img{
     width: 100%;

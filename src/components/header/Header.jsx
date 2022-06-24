@@ -1,7 +1,10 @@
 import React from "react";
 import classes from "./Header.module.css";
 import {NavLink} from "react-router-dom";
+import {setUserData} from "../../redux/auth-reducer";
+
 const Header = (props) => {
+
       return (
           <header className="header">
               <div className={classes.image}>
@@ -12,8 +15,9 @@ const Header = (props) => {
                   <a href="">News</a> -
                   <a href="">Message</a> -
               </div>
-              <div className={classes.loginBlock}>
-                  { props.isAuth ? props.login :
+
+              <div className={classes.loginBlock} >
+                  { props.isAuth ? [<h5 key={'props.login'}>{props.login}</h5>,<img key={'props.userId'}src="https://w-dog.ru/wallpapers/1/21/494513120428084/oblaka-gory-derevya-reka-doroga.jpg" alt=""/>] :
                   <NavLink to={'/login'}>Login</NavLink>}
               </div>
           </header>

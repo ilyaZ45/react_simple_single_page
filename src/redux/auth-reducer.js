@@ -1,11 +1,11 @@
 const SET_USER_DATA = 'SET_USER_DATA';
 const UNFOLLOW = 'UNFOLLOW';
 
-
 let initialState = {
     userId: null,
     email: null,
     login: null,
+    photo: "https://www.sunhome.ru/i/wallpapers/138/belii-zamok.orig.jpg",
     isAuth: false
 
 }
@@ -22,5 +22,5 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
-export const setUserData = (userId,email, login) => ({type: SET_USER_DATA, data: {userId,email,login}});
+export const setUserData = (userId,email, login, photo) => ({type: SET_USER_DATA, data: {userId,email,login, photo}});
 export default authReducer;

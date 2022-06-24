@@ -26,13 +26,14 @@ const Dialogs = (props) => {
     // debugger;
     return (
         <div className={classes.content}>
+            <div className={classes.wrap}>
             <div className={classes.dialogs} >
               {dialogsEl}
             </div>
             <div className={classes.messages}>
                {messageEl}
             </div>
-            <div>
+            <div className={classes.block2}>
                 <div>
                     <textarea
                               value={newMessageBody}
@@ -43,6 +44,7 @@ const Dialogs = (props) => {
                 <div>
                     <button onClick={addMessage}>Add post</button>
                 </div>
+            </div>
             </div>
         </div>
     );

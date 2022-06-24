@@ -21,3 +21,10 @@
 .loginBlock a{
   color: blue;
 }
+.loginBlock img{
+  width: 3rem;
+  height: 3rem;
+}
+.loginBlock h5{
+  margin: 0;
+}
