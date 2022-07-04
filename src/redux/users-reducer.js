@@ -5,43 +5,11 @@ const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE';
 const SET_TOTAL_USERS_COUNT = 'SET-TOTAL-USERS-COUNT';
 
 let initialState = {
-    users: [
-        // {
-        //     id: 1,
-        //     photoUrl: 'https://avatars.mds.yandex.net/i?id=09e9c64ec63ae8045232ebc97b23226b-5163423-images-thumbs&n=13',
-        //     followed: true,
-        //     fullName: "Dmitry",
-        //     status: "I am a Boss",
-        //     location: {country: 'Belarus', city: 'Minsk'}
-        // },
-        // {
-        //     id: 2,
-        //        photoUrl: '',
-        //     followed: true,
-        //     fullName: "Dmitry",
-        //     status: "I am a Bon",
-        //     location: {country: 'Russia', city: 'Moscow'}
-        // },
-        // {
-        //     id: 3,
-        //     followed: false,
-        //        photoUrl: '',
-        //     fullName: "Dmitry",
-        //     status: "I am a miniBoss",
-        //     location: {country: 'Ukraine', city: 'Kiev'}
-        // },
-        // {
-        //     id: 4,
-        //     followed: true,
-        //        photoUrl: '',
-        //     fullName: "Dmitry",
-        //     status: "I am a Vasyz",
-        //     location: {country: 'Polska', city: 'Warshaw'}
-        // },
-    ],
+    users: [ ],
     pageSize: 5,
     totalUsersCount: 0,
     currentPage: 1,
+    isFetching: true
 }
 
 const usersReducer = (state = initialState, action) => {

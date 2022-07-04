@@ -9,7 +9,7 @@ import {NavLink} from "react-router-dom";
 // }
 
 // const classNameFunc = ({ isActive }) => (isActive ? "active" : "");
-const Nav = (props) => {
+const NavContainer = (props) => {
     return (
         <nav className={classes.nav}>
 
@@ -50,4 +50,4 @@ const Nav = (props) => {
         </nav>
     );
 }
-export default Nav;
+export default NavContainer;

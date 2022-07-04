@@ -13,9 +13,9 @@ class HeaderContainer extends React.Component {
                 .then(response => {
                     // debugger;
                    if (response.data.resultCode === 0) {
-                       let {id, login, email, photo} = response.data.data;
-                       this.props.setUserData(id,email,login,photo);
-                       console.log(id,email,login,photo);
+                       let {id, login, email} = response.data.data;
+                       this.props.setUserData(id,email,login);
+                       console.log(id,email,login);
                    }
                 })
     }
