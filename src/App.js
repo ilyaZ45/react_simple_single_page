@@ -12,6 +12,8 @@ import ProfileContainer from "./components/main/profile/ProfileContainer";
 import UsersContainer from "./components/main/users/UsersContainer";
 import News from "./components/main/news/News";
 import NavContainer from "./components/nav/Nav";
+import Login from "./components/login/Login";
+import NewsContainer from "./components/main/news/News";
 
 const App = (props) => {
     // debugger;
@@ -20,7 +22,7 @@ const App = (props) => {
         <div className="app-wrapper">
             <HeaderContainer/>
             <Routes>
-                <Route path="/login" element={<HeaderContainer/>}/>
+                <Route path="/login" element={<Login/>}/>
                 <Route path="/" element={<Navigate replace to="/profile"/>}/>
                 <Route path="/dialogs" element={<DialogsContainer/>}/>
                 <Route path="/profile" element={<ProfileContainer
@@ -28,7 +30,7 @@ const App = (props) => {
                 <Route path="/profile/:id" element={<ProfileContainer/>}/>
                 <Route path="/users" element={<UsersContainer
                 />}/>
-                <Route path="/news" element={<News/>}/>
+                <Route path="/news" element={<NewsContainer/>}/>
 
             </Routes>
             <NavContainer/>

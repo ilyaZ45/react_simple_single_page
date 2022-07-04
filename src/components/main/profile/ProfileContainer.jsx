@@ -38,8 +38,7 @@ function withRouter(Component) {
     return ComponentWithRouterProp;
 }
 let mapStateToProps = (state) => ({  //след за изменения и отоброж их
-  profile: state.profilePage.profile
-
+  profile: state.profilePage.profile,
 })
 let wrap=withRouter(ProfileContainer);
 export default connect(mapStateToProps,{setUserProfile})(wrap);

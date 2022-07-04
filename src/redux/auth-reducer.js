@@ -6,6 +6,7 @@ let initialState = {
     userId: null,
     email: null,
     login: null,
+    isAuth: false,
     photo: "https://www.sunhome.ru/i/wallpapers/138/belii-zamok.orig.jpg",
 
 }

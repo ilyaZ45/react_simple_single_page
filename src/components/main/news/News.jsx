@@ -4,7 +4,7 @@ import Post from "../profile/profileinfo/post/Post";
 import classes from "./News.module.css";
 import {NavLink} from "react-router-dom";
 
-const News = () => {
+const NewsContainer = () => {
  return(
     <div className={classes.content}>
         <div>
@@ -16,4 +16,4 @@ const News = () => {
     </div>
  );
 }
-export default News
+export default NewsContainer;

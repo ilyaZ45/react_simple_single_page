@@ -1,6 +1,7 @@
 import classes from "./ProfileInfo.module.css";
 import React from "react";
 import Post from "./post/Post";
+import {Navigate} from "react-router-dom";
 
 
 const ProfileInfo = (props) => {
@@ -21,6 +22,7 @@ const ProfileInfo = (props) => {
         return <h1> Wait </h1>
     }
     // debugger;
+    if (props.isAuth === false) return <Navigate replace to={"/Login"} />;
     return (
         <div className={classes.content}>
             <div className={classes.prof}>

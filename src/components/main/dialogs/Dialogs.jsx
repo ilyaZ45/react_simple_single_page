@@ -2,6 +2,7 @@ import classes from "./Dialogs.module.css";
 import Dialog from "./dialog/Dialog";
 import Message from "./message/Message";
 import React from "react";
+import {Navigate} from "react-router-dom";
 
 const Dialogs = (props) => {
     // debugger;
@@ -24,6 +25,7 @@ const Dialogs = (props) => {
         // })
     }
     // debugger;
+    if (props.isAuth === false) return <Navigate replace to={"/Login"} />;
     return (
         <div className={classes.content}>
             <div className={classes.wrap}>

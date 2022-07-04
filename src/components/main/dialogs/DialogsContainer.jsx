@@ -23,10 +23,11 @@ import {addMessageActionCreator, messageUpdateActionCreator} from "../../../redu
 // }
 
 let mapStateToProps = (state) => {
-    // debugger;
+     // debugger;
     return {
     dialogsPage: state.dialogsPage,
     // newMessageBody: state.dialogsPage.newMessageBody
+        isAuth: state.auth.isAuth,
 }
 }
 let mapDispatchToProps = (dispatch) => {

@@ -1,4 +1,4 @@
-import React, {Suspense} from 'react';
+import React from 'react';
 import Profile from "./profile/Profile";
 import News from "./news/News";
 import {Navigate, Route, Router, Routes, useParams} from "react-router-dom";
@@ -11,10 +11,10 @@ import ProfileContainer from "./profile/ProfileContainer";
 const MainContainer = (props) => {
     return (
         <main>
-            <DialogsContainer />
-            <ProfileContainer />
-            <UsersContainer />
-            <News />
+            {/*<DialogsContainer />*/}
+            {/*<ProfileContainer />*/}
+            {/*<UsersContainer />*/}
+            {/*<News />*/}
         </main>
 
     );

@@ -18,7 +18,7 @@ const NavContainer = (props) => {
                     <li><NavLink to="/profile">Profile</NavLink></li>
                     <li><NavLink to="/dialogs">Posts</NavLink></li>
                     <li><NavLink to="/users">Users</NavLink></li>
-                    <li><NavLink to="/news">News</NavLink></li>
+                    <li><NavLink to="/">News</NavLink></li>
                     <li><NavLink to="/">Photos</NavLink></li>
                     <li><NavLink to="/">Reviews</NavLink></li>
                 </ul>
