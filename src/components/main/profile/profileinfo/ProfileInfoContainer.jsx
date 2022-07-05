@@ -2,6 +2,9 @@ import React from "react";
 import ProfileInfo from "./ProfileInfo";
 import {connect} from "react-redux";
 import {addPostActionCreator, postUpdateActionCreator} from "../../../../redux/profile-reducer";
+import {Navigate} from "react-router-dom";
+import {withAuthRedirect} from "../../../../hoc/withAuthRedirect";
+import {compose} from "redux";
 
 // const ProfileInfoContainer = (props) => {
 //     // debugger;
@@ -22,14 +25,16 @@ import {addPostActionCreator, postUpdateActionCreator} from "../../../../redux/p
 //     );
 // }
 
+
 let mapStateToProps = (state) => {
     // debugger;
     return {
         postsData: state.profilePage.postsData,
         newPostText: state.profilePage.newPostText,
-        isAuth: state.auth.isAuth,
     }
 }
+
+// let AuthRedirectComponent = withAuthRedirect(ProfileInfo);
 let mapDispatchToProps = (dispatch) => {
     return {
         updateNewPost: (body) => {
@@ -41,6 +46,8 @@ let mapDispatchToProps = (dispatch) => {
         },
     }
 }
-let ProfileInfoContainer = connect(mapStateToProps,
-    mapDispatchToProps)(ProfileInfo);
-export default ProfileInfoContainer;
+// let ProfileInfoContainer = connect(mapStateToProps,
+//     mapDispatchToProps)(AuthRedirectComponent);
+export default compose(connect(mapStateToProps, mapDispatchToProps),
+    withAuthRedirect
+)(ProfileInfo);;

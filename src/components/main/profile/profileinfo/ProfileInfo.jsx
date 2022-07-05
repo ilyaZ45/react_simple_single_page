@@ -22,7 +22,7 @@ const ProfileInfo = (props) => {
         return <h1> Wait </h1>
     }
     // debugger;
-    if (props.isAuth === false) return <Navigate replace to={"/Login"} />;
+    // if (props.isAuth === false) return <Navigate replace to={"/Login"} />;
     return (
         <div className={classes.content}>
             <div className={classes.prof}>
