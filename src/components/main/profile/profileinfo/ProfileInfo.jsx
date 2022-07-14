@@ -2,6 +2,7 @@ import classes from "./ProfileInfo.module.css";
 import React from "react";
 import Post from "./post/Post";
 import {Navigate} from "react-router-dom";
+import ProfileStatus from "./profilestatus/ProfileStatus";
 
 
 const ProfileInfo = (props) => {
@@ -40,6 +41,10 @@ const ProfileInfo = (props) => {
                         <button onClick={addPost}>Add post</button>
                     </div>
             </div>
+
+            <ProfileStatus status={"Hello guys"}/>
+
+
 
 
             <div className="just">
